@@ -1,0 +1,26 @@
+service: serverless-micro-django
+
+provider:
+  name: aws
+  runtime: python3.8
+  stage: staging
+  region: us-west-1
+
+functions:
+  textract:
+    handler: handler.lambda_handler
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux
+
+package:
+  exclude:
+    - .venv/**
+    - venv/**
+    - __pycache__/**
+    - README.md
+    - requirements.txt
