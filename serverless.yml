@@ -7,7 +7,7 @@ provider:
   region: us-west-1
 
 functions:
-  textract:
+  serverless-micro-django:
     handler: handler.lambda_handler
 
 plugins:
